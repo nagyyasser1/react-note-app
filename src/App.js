@@ -12,12 +12,12 @@ function App() {
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data'))
     const dark = JSON.parse(localStorage.getItem('dark'))
-    if (savedNotes.length > 0) {
+    if (savedNotes != null && savedNotes.length > 0) {
       setNotes(savedNotes)
     }
-    if (dark === true) {
+    if (dark != null && dark === true) {
       setDarkMode(true)
-    } else if (dark === false) {
+    } else if (dark != null && dark === false) {
       setDarkMode(false)
     }
   }, [])
